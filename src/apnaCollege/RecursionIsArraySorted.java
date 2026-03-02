@@ -4,17 +4,14 @@ import java.util.*;
 
 public class RecursionIsArraySorted {
 
-    public static void InputArr(int n, int[] arr) {
-        Scanner sc = new Scanner(System.in);
-        if (n == arr.length-1) {
-            System.out.printf("Enter arr[%d] = ",n);
-            arr[n] = sc.nextInt();
+    public static void InputArr(int n, int[] arr, Scanner sc) {
+        if (n == arr.length) {
             return;
         }
         System.out.printf("Enter arr[%d] = ",n);
         arr[n] = sc.nextInt();
 
-        InputArr(n+1,arr);
+        InputArr(n+1,arr,sc);
     }
 
     public static boolean IsSorted(int[] arr, int n) {
@@ -36,7 +33,7 @@ public class RecursionIsArraySorted {
         int[] arr = new int[size];
 
         System.out.println("Enter elements of array");
-        InputArr(0, arr);
+        InputArr(0, arr,sc);
 
         if (IsSorted(arr, 0)) {
             System.out.println("Array is Sorted");
