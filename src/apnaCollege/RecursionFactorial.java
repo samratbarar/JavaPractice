@@ -15,6 +15,6 @@ public class RecursionFactorial {
         System.out.println("Enter the number");
         int num = sc.nextInt();
 
-        System.out.println("The factorial of given number is " + Fact(num));
+        System.out.println("The CWH.factorial of given number is " + Fact(num));
     }
 }

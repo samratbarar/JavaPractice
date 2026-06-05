@@ -18,7 +18,7 @@ public class patternPascalTriangle {
             // numbers printing
             // bekar hai but mera logic hai
             for (int j = 0; j <= i; j++) {
-                int factI = 1, factJ = 1, factIJ= 1; // calculating factorial
+                int factI = 1, factJ = 1, factIJ= 1; // calculating CWH.factorial
                 for (int k = 2; k <= i; k++) {
                     factI *= k;
                     if (k <= j) {
