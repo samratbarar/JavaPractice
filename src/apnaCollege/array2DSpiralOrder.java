@@ -2,6 +2,7 @@ package apnaCollege;
 
 import java.util.*;
 
+// not completely my code with little help of approach but maximum efforts is mine
 /*
 Print the spiral order matrix as output for a given matrix of numbers. [Difficult for Beginners]
  */
@@ -17,7 +18,7 @@ public class array2DSpiralOrder {
         int[][] matrix = new int[rows][columns];
 
         // input matrix
-        System.out.println("The transpose is ");
+        System.out.println("Enter the matrix ");
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 System.out.print("matrix[" + i + "][" + j + "] = ");
@@ -25,5 +26,32 @@ public class array2DSpiralOrder {
             }
         }
 
+        int rowStart = 0, rowEnd = rows - 1, columnStart = 0, columnEnd = columns - 1, i;
+
+        while (rowStart <= rowEnd && columnStart <= columnEnd) {
+            for (i = columnStart; i <= columnEnd; i++) {
+                System.out.print(matrix[rowStart][i] + ",");
+            }
+
+            rowStart++;
+
+            for (i = rowStart; i <= rowEnd; i++) {
+                System.out.print(matrix[i][columnEnd] + ",");
+            }
+
+            columnEnd--;
+
+            for (i = columnEnd; i >= columnStart; i--) {
+                System.out.print(matrix[rowEnd][i] + ",");
+            }
+
+            rowEnd--;
+
+            for (i = rowEnd; i >= rowStart; i--) {
+                System.out.print(matrix[i][columnStart] + ",");
+            }
+
+            columnStart++;
+        }
     }
 }
