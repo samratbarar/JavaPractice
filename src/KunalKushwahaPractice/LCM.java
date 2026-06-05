@@ -32,5 +32,5 @@ public class LCM {
 }
 /*
 ya phele gcd nikal ke fir
-LCM = (A*B) / GCD(A<B) formula se nikal lenge
+LCM = (A*B) / GCD(A,B) formula se nikal lenge
  */

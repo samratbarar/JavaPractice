@@ -9,19 +9,14 @@ Write a function that calculates the Greatest Common Divisor of 2 numbers.
 public class functionGCD {
     public static int GCD(int n1, int n2) {
         int gcd = 1;
-        if (n1 > n2) {
-            for (int i = 2; i <= n1/2; i++) {
-                if (n1 % i == 0 && n2 % i == 0) {
-                    gcd = i;
-                }
-            }
-        } else {
-            for (int i = 2; i <= n2/2; i++) {
-                if (n1 % i == 0 && n2 % i == 0) {
-                    gcd = i;
-                }
+        int min = Math.min(n1,n2);
+
+        for (int i = 1; i <= min; i++) {
+            if (n1 % i == 0 && n2 % i == 0) {
+                gcd = i;
             }
         }
+
         return gcd;
     }
 
