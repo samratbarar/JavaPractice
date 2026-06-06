@@ -2,7 +2,7 @@ package CWH.OOPaPracticeSet;
 
 import java.util.*;
 
-// Create a class Sphere and use getters and setters to set its radius and height
+// Create a class Sphere and use getters and setters to set its radius
 
 class Sphere{
     private int radius;

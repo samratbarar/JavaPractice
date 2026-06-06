@@ -3,7 +3,7 @@ package apnaCollege.Recursion;
 import java.util.Scanner;
 
 public class RecursionKeypadCombination {
-    static String[] keypad = {".","CWH.basicQues.abc","def","ghi","jkl","mno","pqrs","tu","vwx","yz"};
+    static String[] keypad = {".","abc","def","ghi","jkl","mno","pqrs","tu","vwx","yz"};
     public static void KeypadComb(String str, int idx, String combination) {
         if (idx == str.length()) {
             System.out.println(combination);

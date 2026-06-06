@@ -61,7 +61,7 @@ public class guess_the_number {
         Game GuessTheNumber = new Game();
 
         do {
-            System.out.println("Guess the number ");
+            System.out.println("Guess the number between 0 to 100");
             GuessTheNumber.takeUserInput(sc.nextInt());
             GuessTheNumber.guessTheNumber();
             GuessTheNumber.incrementNoOfGuesses();

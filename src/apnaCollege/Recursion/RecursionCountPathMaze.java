@@ -2,15 +2,18 @@ package apnaCollege.Recursion;
 
 import java.util.Scanner;
 
+// count the number of paths of reaching n-1,m-1 from 0,0 only moving right and downwards
+
 public class RecursionCountPathMaze {
-    public static void countPathMaze(int row, int col, int trackR, int trackD) {
-        if (trackR == col-1 || trackD == row-1) {
-            return;
+    public static int countPathMaze(int i, int j, int n, int m) {
+        if (i == n || j == m) {
+            return 0;
         }
-        System.out.printf("Move from (%d,%d) to (%d,%d)\n",trackD,trackR,trackD,trackR+1);
-        countPathMaze(row, col, trackR+1, trackD);
-        System.out.printf("Move from (%d,%d) to (%d,%d)\n",trackD,trackR+1,trackD+1,trackR+1);
-        countPathMaze(row, col, trackR, trackD+1);
+        if (i == n-1 && j == m-1) {
+            return 1;
+        }
+
+        return countPathMaze(i+1, j, n, m) + countPathMaze(i, j+1, n, m);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -18,6 +21,7 @@ public class RecursionCountPathMaze {
         System.out.println("Enter the numbers of rows and columns : ");
         int rows = sc.nextInt(), cols = sc.nextInt();
 
-        countPathMaze(rows, cols, 0, 0);
+
+        System.out.println("The number of paths is " + countPathMaze(0, 0, rows, cols));
     }
 }

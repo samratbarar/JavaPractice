@@ -18,7 +18,7 @@ public class RecursionIsArraySorted {
         if (n == arr.length-1) {
             return true;
         }
-        if (arr[n] > arr[n+1]) {
+        if (arr[n] >= arr[n+1]) {
             return false;
         }
 
