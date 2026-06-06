@@ -12,6 +12,7 @@ public class RecursionPermutationOfString {
             PrintPermutations(str.substring(0, i) + str.substring(i+1), perm + str.charAt(i));
         }
     }
+    
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
