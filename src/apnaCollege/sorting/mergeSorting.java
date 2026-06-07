@@ -2,7 +2,8 @@ package apnaCollege.sorting;
 
 import java.util.*;
 
-// Use divide and conquer technique
+// Use divide and conquer technique :--> firstly divide array to single element array then conquer or merge them in sorting order
+// I write with help
 
 public class mergeSorting {
     public static void conquer(int arr[], int si, int mid, int ei) {
