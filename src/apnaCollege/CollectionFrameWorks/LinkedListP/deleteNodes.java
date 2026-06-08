@@ -10,7 +10,7 @@ public class deleteNodes {
         Scanner sc = new Scanner(System.in);
         LinkedList<Integer> list = new LinkedList<>();
 
-        System.out.println("Enter the numer of elements");
+        System.out.println("Enter the number of elements");
         int num = sc.nextInt();
 
         System.out.println("Enter the element between 1 to 50");
