@@ -9,6 +9,16 @@ import apnaCollege.CollectionFrameWorks.LinkedListsLL;
 // Do not use any other linked list and keep one transverse
 
 public class reverseLinkedList {
+    public static LL.Node reverseLinkedList(LL.Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        LL.Node newHead = reverseLinkedList(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return newHead;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         LL list = new LL();
@@ -42,6 +52,9 @@ public class reverseLinkedList {
         //list.head.next = null;
         list.head = prev;
 
+        list.printList();
+
+        list.head = reverseLinkedList(list.head);
         list.printList();
     }
 }
