@@ -102,21 +102,24 @@ class CC {
 }
 
 public class customCalculator {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws  InvalidInputException, MaxInputException, MaxMultiplierInputException{
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the operator and operands");
-        try {
-            CC c1 = new CC(sc.next(), sc.nextDouble(), sc.nextDouble());
-            c1.calculate();
-        } catch (InvalidInputException e) {
-            System.out.println(e.getMessage());
-        } catch (MaxInputException e) {
-            System.out.println(e.getMessage());
-        } catch (MaxMultiplierInputException e) {
-            System.out.println(e.getMessage());
-        } catch (ArithmeticException e) {
-            System.out.println("Cannot divide by 0");
-        }
+//        try {
+//            CC c1 = new CC(sc.next(), sc.nextDouble(), sc.nextDouble());
+//            c1.calculate();
+//        } catch (InvalidInputException e) {
+//            System.out.println(e.getMessage());
+//        } catch (MaxInputException e) {
+//            System.out.println(e.getMessage());
+//        } catch (MaxMultiplierInputException e) {
+//            System.out.println(e.getMessage());
+//        } catch (ArithmeticException e) {
+//            System.out.println("Cannot divide by 0");
+//        }
+
+        CC c1 = new CC(sc.next(), sc.nextDouble(), sc.nextDouble());
+        c1.calculate();
     }
 }
