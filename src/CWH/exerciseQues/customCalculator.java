@@ -27,6 +27,18 @@ class InvalidInputException extends Exception {
     }
 }
 
+class CannotDivideBy0Exception extends Exception {
+    @Override
+    public String toString() {
+        return "cannot divide by 0";
+    }
+
+    @Override
+    public String getMessage() {
+        return "Please Enter correct input";
+    }
+}
+
 class MaxInputException extends Exception {
     @Override
     public String toString() {
@@ -78,7 +90,7 @@ class CC {
         this.operator = operator;
     }
 
-    public void calculate() {
+    public void calculate() throws CannotDivideBy0Exception {
         switch (operator) {
             case "+":
                 System.out.println(operand1+operand2);
@@ -91,7 +103,7 @@ class CC {
                 break;
             case "/":
                 if (operand2 == 0) {
-                    throw new ArithmeticException();
+                    throw new CannotDivideBy0Exception();
                 }
                 System.out.println(operand1/operand2);
                 break;
@@ -102,24 +114,24 @@ class CC {
 }
 
 public class customCalculator {
-    public static void main(String[] args) throws  InvalidInputException, MaxInputException, MaxMultiplierInputException{
+    public static void main(String[] args) throws  InvalidInputException, MaxInputException, MaxMultiplierInputException, CannotDivideBy0Exception {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the operator and operands");
-//        try {
-//            CC c1 = new CC(sc.next(), sc.nextDouble(), sc.nextDouble());
-//            c1.calculate();
-//        } catch (InvalidInputException e) {
-//            System.out.println(e.getMessage());
-//        } catch (MaxInputException e) {
-//            System.out.println(e.getMessage());
-//        } catch (MaxMultiplierInputException e) {
-//            System.out.println(e.getMessage());
-//        } catch (ArithmeticException e) {
-//            System.out.println("Cannot divide by 0");
-//        }
+        try {
+            CC c1 = new CC(sc.next(), sc.nextDouble(), sc.nextDouble());
+            c1.calculate();
+        } catch (InvalidInputException e) {
+            System.out.println(e.getMessage());
+        } catch (MaxInputException e) {
+            System.out.println(e.getMessage());
+        } catch (MaxMultiplierInputException e) {
+            System.out.println(e.getMessage());
+        } catch (CannotDivideBy0Exception e) {
+            System.out.println(e.getMessage());
+        }
 
-        CC c1 = new CC(sc.next(), sc.nextDouble(), sc.nextDouble());
-        c1.calculate();
+        CC c2 = new CC(sc.next(), sc.nextDouble(), sc.nextDouble());
+        c2.calculate();
     }
 }
