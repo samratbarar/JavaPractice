@@ -1,4 +1,4 @@
-package apnaCollege.CollectionFrameWorks;
+package apnaCollege.CollectionFrameWorks.LinkedListP;
 
 public class LL {
     public Node head;

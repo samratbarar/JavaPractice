@@ -1,4 +1,4 @@
-package apnaCollege.CollectionFrameWorks;
+package apnaCollege.CollectionFrameWorks.LinkedListP;
 
 import java.util.Scanner;
 

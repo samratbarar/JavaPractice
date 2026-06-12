@@ -2,9 +2,6 @@ package apnaCollege.CollectionFrameWorks.LinkedListP;
 
 import java.util.*;
 
-import apnaCollege.CollectionFrameWorks.LL;
-import apnaCollege.CollectionFrameWorks.LinkedListsLL;
-
 // To reverse a linked list conditions space complexity O(1) and time O(n)
 // Do not use any other linked list and keep one transverse
 
