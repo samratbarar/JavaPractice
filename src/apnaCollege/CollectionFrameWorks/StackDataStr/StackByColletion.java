@@ -1,4 +1,4 @@
-package apnaCollege.CollectionFrameWorks.StackDataStructure;
+package apnaCollege.CollectionFrameWorks.StackDataStr;
 
 import java.util.Stack;
 
