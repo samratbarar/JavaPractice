@@ -184,6 +184,93 @@ public class BuildTreeBuilder {
 
             return new TreeInfo(myHeight, myDia);
         }
+
+//        public static int KthLevelSum(Node root, int k) {
+//            if (root == null) {
+//                return -1;
+//            }
+//
+//            Queue<Node> q = new LinkedList<>();
+//            q.add(root);
+//            q.add(null);
+//            int level = 1;
+//            int sum = 0;
+//
+//            while(!q.isEmpty()) {
+//                Node curr = q.remove();
+//
+//                if (k == level && curr != null) {
+//                    sum += curr.data;
+//                }
+//
+//                if (curr == null) {
+//                    level++;
+//                    if (q.isEmpty()) {
+//                        break;
+//                    } else {
+//                        q.add(null);
+//                    }
+//                } else {
+//                    if (curr.left != null) {
+//                        q.add(curr.left);
+//                    }
+//
+//                    if (curr.right != null) {
+//                        q.add(curr.right);
+//                    }
+//                }
+//            }
+//
+//            return sum;
+//        }
+
+        // above is my logic and below is with help of chatGPT
+
+        public static int KthLevelSum(Node root, int k) {
+            if (root == null) {
+                return -1;
+            }
+
+            Queue<Node> q = new LinkedList<>();
+            q.add(root);
+            q.add(null);
+
+            int level = 1;
+            int sum = 0;
+
+            while (!q.isEmpty()) {
+
+                Node curr = q.remove();
+
+                if (curr == null) {
+                    if (level == k) {
+                        return sum;
+                    }
+
+                    level++;
+
+                    if (!q.isEmpty()) {
+                        q.add(null);
+                    }
+
+                    continue;
+                }
+
+                if (level == k) {
+                    sum += curr.data;
+                }
+
+                if (curr.left != null) {
+                    q.add(curr.left);
+                }
+
+                if (curr.right != null) {
+                    q.add(curr.right);
+                }
+            }
+
+            return -1;
+        }
     }
 
     public static void main(String[] args) {
@@ -210,5 +297,7 @@ public class BuildTreeBuilder {
         System.out.println(BinaryTree.diaOfTree(root));
 
         System.out.println(BinaryTree.diameter(root).dia);
+
+        System.out.println(BinaryTree.KthLevelSum(root, 2));
     }
 }
